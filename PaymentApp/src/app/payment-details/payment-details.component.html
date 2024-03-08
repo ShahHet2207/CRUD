@@ -1,0 +1,22 @@
+<div class="bg-body-secondary text-center py-5">
+    <h1>Payment Detail Register</h1>
+</div>
+
+<div class="row mt-5">
+    <div class="col-6">
+        <app-payment-detail-form [change]="paymentdetail1"></app-payment-detail-form>
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            <li class="d-flex justify-content-between align-item-start m-2 p-3 border rounded-3"
+                *ngFor="let item of paymentdetail">
+                <div class="mouse-hover" (click)="getDataById(item.id)">
+                    <div class="fw-bold">{{item.ownerName}}</div>
+                    <div>{{item.cardNumber}}</div>
+                    <div class="fw-bold">{{item.expirationDate}}</div>
+                </div>
+                <span class="text-secondary"><i class="fa-solid fa-trash fa-lg mouse-hover"></i></span>
+            </li>
+        </ul>
+    </div>
+</div>
